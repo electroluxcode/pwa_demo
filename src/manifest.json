@@ -1,6 +1,6 @@
 {
   "name": "Electrolux_pwa_demo",
-  "short_name": "demo",
+  "short_name": "Electrolux_pwa",
   "display": "fullscreen",
   "start_url": "",  
   "theme_color": "blue",
