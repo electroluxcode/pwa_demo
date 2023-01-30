@@ -14,9 +14,9 @@ console.log('Script loaded!')
 var cacheStorageKey = 'min'
 
 var cacheList = [
-  "main.css",
-  "e.png",
-  "pwa-fonts.png",
+  "/pwa_demo/main.css",
+  "/pwa_demo/e.png",
+  "/pwa_demo/pwa-fonts.png",
 ]
 //重点：可以在注册完成安装 Service Worker 时, 抓取静态资源写入缓存:
 self.addEventListener('install', function(e) {
