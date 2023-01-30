@@ -1,0 +1,21 @@
+{
+  // 应用的名称
+  "name": "Electrolux_pwa_demo",
+  // 简称 ，头部会出现
+  "short_name": "demo",
+  // 显示模式 fullscreen（全屏） | standalone(独立) | standalone（最小化） | browser（浏览器）
+  "display": "fullscreen",
+  // 启动页
+  "start_url": "/",  
+  // 主题颜色 ，头部的颜色
+  "theme_color": "blue",
+  // 背景颜色
+  "background_color": "red",
+  "icons": [
+    {
+      "src": "e.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ]
+}
