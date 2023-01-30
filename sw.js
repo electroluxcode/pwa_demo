@@ -39,21 +39,22 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
-    Promise.all(
-      caches.keys().then(cacheNames => {
-        return cacheNames.map(name => {
-          if (name !== cacheStorageKey) {
-            return caches.delete(name)
-          }
-        })
-      })
-    ).then(() => {
-      console.log('Clients claims.')
-      //在新安装的 Service Worker 中通过调用 self.clients.claim() 
-      //取得页面的控制权, 这样之后打开页面都会使用版本更新的缓存。
-      //旧的 Service Worker 脚本不再控制着页面之后会被停止
-      return self.clients.claim()
-    })
+    console.log("sdsd")
+    // Promise.all(
+    //   caches.keys().then(cacheNames => {
+    //     return cacheNames.map(name => {
+    //       if (name !== cacheStorageKey) {
+    //         return caches.delete(name)
+    //       }
+    //     })
+    //   })
+    // ).then(() => {
+    //   console.log('Clients claims.')
+    //   //在新安装的 Service Worker 中通过调用 self.clients.claim() 
+    //   //取得页面的控制权, 这样之后打开页面都会使用版本更新的缓存。
+    //   //旧的 Service Worker 脚本不再控制着页面之后会被停止
+    //   return self.clients.claim()
+    // })
   )
 })
 
