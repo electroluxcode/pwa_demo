@@ -13,7 +13,7 @@
   "background_color": "red",
   "icons": [
     {
-      "src": "/pwa_demo/e.png",
+      "src": "e.png",
       "sizes": "256x256",
       "type": "image/png"
     }
