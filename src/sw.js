@@ -39,7 +39,7 @@ self.addEventListener('install', function(e) {
 self.addEventListener('activate', function(e) {
   console.log('Activate event')
   e.waitUntil(
-    console.log("sdsd")
+    
     Promise.all(
       caches.keys().then(cacheNames => {
         return cacheNames.map(name => {
