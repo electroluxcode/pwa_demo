@@ -257,7 +257,7 @@ self.addEventListener('fetch', function(e) {
         });
     }
 
-    fetch('./data.json')
+   
 
     var statusEl = document.querySelector('#network-status')
     if (!navigator.onLine) {
