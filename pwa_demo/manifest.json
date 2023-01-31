@@ -2,7 +2,7 @@
   "name": "Electrolux_pwa_demo",
   "short_name": "Electrolux_pwa",
   "display": "fullscreen",
-  "start_url": "/",  
+  "start_url": "/pwa_demo/index.html",  
   "theme_color": "blue",
   "background_color": "red",
   "icons": [
