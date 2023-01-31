@@ -54,8 +54,9 @@
 
     // 监听beforeinstallprompt事件，该事件在网站满足PWA安装条件时触发，保存安装事件
     window.addEventListener("beforeinstallprompt", e => {
-        e.preventDefault();
         console.log("满足触发条件")
+        e.preventDefault();
+        
         deferredPrompt = e;
     });
 
