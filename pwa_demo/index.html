@@ -8,20 +8,6 @@
 </head>
 
 <body>
-  <div class="revision">测试</div>
-  <img src="/pwa_demo/pwa-fonts.png">
-  <div class="main-text">
-    Electrolux demo 示例
-  </div>
-  <div class="network-message">
-    Network:
-    <span id="network-status" class="">Good</span>
-    <button id="notifications" onclick="addToDesktop()">安装</button>
-  </div>
-
-
-
-
   <script>
     //这里是进行sw.js 离线缓存的设置，注册service worker
     if (navigator.serviceWorker != null) {
@@ -33,14 +19,11 @@
 
     // fetch('./data.json')
 
-    var statusEl = document.querySelector('#network-status')
-    if (!navigator.onLine) {
-      statusEl.classList = ['is-offline']
-      statusEl.innerText = 'Offline'
-    }
-  </script>
-
-  <script>
+    // var statusEl = document.querySelector('#network-status')
+    // if (!navigator.onLine) {
+    //   statusEl.classList = ['is-offline']
+    //   statusEl.innerText = 'Offline'
+    // }
 
     //首先进行授权
     Notification.requestPermission().then(function (result) {
@@ -56,7 +39,6 @@
     window.addEventListener("beforeinstallprompt", e => {
         console.log("满足触发条件")
         e.preventDefault();
-        
         deferredPrompt = e;
     });
 
@@ -67,9 +49,28 @@
 
     // 手动触发PWA安装
     function addToDesktop() {
-      
         deferredPrompt.prompt();
     }
+  </script>
+  <div class="revision">测试</div>
+  <img src="/pwa_demo/pwa-fonts.png">
+  <div class="main-text">
+    Electrolux demo 示例
+  </div>
+  <div class="network-message">
+    Network:
+    <span id="network-status" class="">Good</span>
+    <button id="notifications" onclick="addToDesktop()">安装</button>
+  </div>
+
+
+
+
+  
+
+  <script>
+
+    
 
 
     
