@@ -1,78 +1,95 @@
+<!doctype html>
+<html lang="zh-CN" translate="no">
+
 <head>
-  <title>Electrolux demo</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no" />
-  <link rel="manifest" href="/pwa_demo/manifest.json" />
-  <link rel="stylesheet" type="text/css" href="/pwa_demo/main.css">
-  <link rel="icon" href="/pwa_demo/e.png" type="image/png" />
+    <meta charset="utf-8" />
+    <meta name="google" content="notranslate" />
+    <link rel="icon" href="docs/favicon.svg" />
+    
+    <link rel="manifest" href="/pwa_demo/manifest.json" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover" />
+    <meta name="description" content="Teamshare" />
+    <meta property="og:title" content="{{ ogTitle }}" />
+    <meta property="og:url" content="{{ ogUrl }}" />
+    <meta property="og:image" content="docs/images/{{ ogImage }}" />
+    <meta property="og:description" content="{{ ogDescription }}" />
+    <meta name="wpk-bid" content="dta_1_1303056624">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>{{ ogTitle }}</title>
+    <script src="https://g.alicdn.com/dingding/h5-dingtalk-login/0.21.0/ddlogin.js"></script>
+    <script src="https://lf1-cdn-tos.bytegoofy.com/goofy/lark/op/h5-js-sdk-1.5.26.js"></script>
+    <script src="https://sf3-cn.feishucdn.com/obj/static/lark/passport/qrcode/LarkSSOSDKWebQRCode-1.0.1.js"></script>
+    <script>var isDingtalk = navigator && /DingTalk/.test(navigator.userAgent), isProductEnv = window && window.CONFIG && window.CONFIG.APP_ENV && "production" === window.CONFIG.APP_ENV; isProductEnv && function (t, n, e, o) { var i = n.createElement("script"), r = n.getElementsByTagName("script")[0]; i.type = "text/javascript", i.crossorigin = !0, i.onload = function () { t[o] || (t[o] = new t.wpkReporter({ bid: "dta_1_1303056624" })), t[o].installAll() }, r.parentNode.insertBefore(i, r), i.src = "https://g.alicdn.com/woodpeckerx/jssdk??wpkReporter.js" }(window, document, 0, "__wpk")</script>
+    <script>try { window.location.search.indexOf("debug=true") >= 0 && new VConsole } catch (o) { console.error("启动VConsole失败") }</script>
+    <link href="./static/css/src~main.7127f931.chunk.css" rel="stylesheet">
+    <link href="./static/css/main.1d7108ff.chunk.css" rel="stylesheet">
 </head>
 
-<body>
-  <script>
-    //这里是进行sw.js 离线缓存的设置，注册service worker
-    if (navigator.serviceWorker != null) {
-      navigator.serviceWorker.register('/pwa_demo/sw.js')
-        .then(function (registration) {
-          console.log('Registered events at scope: ', registration.scope);
+<body data-app="teamshare"><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <button style="position: fixed;top: 30px; " onclick="uninstall()">手动卸载</button>
+
+    <button style="position: fixed;top: 50px; " onclick="registerSW()">手动加载</button>
+    <script>!function (e) { function t(t) { for (var n, o, c = t[0], i = t[1], l = t[2], s = 0, d = []; s < c.length; s++)o = c[s], Object.prototype.hasOwnProperty.call(a, o) && a[o] && d.push(a[o][0]), a[o] = 0; for (n in i) Object.prototype.hasOwnProperty.call(i, n) && (e[n] = i[n]); for (f && f(t); d.length;)d.shift()(); return u.push.apply(u, l || []), r() } function r() { for (var e, t = 0; t < u.length; t++) { for (var r = u[t], n = !0, o = 1; o < r.length; o++) { var i = r[o]; 0 !== a[i] && (n = !1) } n && (u.splice(t--, 1), e = c(c.s = r[0])) } return e } var n = {}, o = { 6: 0 }, a = { 6: 0 }, u = []; function c(t) { if (n[t]) return n[t].exports; var r = n[t] = { i: t, l: !1, exports: {} }; return e[t].call(r.exports, r, r.exports, c), r.l = !0, r.exports } c.e = function (e) { var t = []; o[e] ? t.push(o[e]) : 0 !== o[e] && { 8: 1, 9: 1, 10: 1 }[e] && t.push(o[e] = new Promise((function (t, r) { for (var n = "static/css/" + ({}[e] || e) + "." + { 8: "e798bc1a", 9: "8842e76d", 10: "cac9c8b2", 11: "31d6cfe0", 12: "31d6cfe0", 13: "31d6cfe0" }[e] + ".chunk.css", a = c.p + n, u = document.getElementsByTagName("link"), i = 0; i < u.length; i++) { var l = (f = u[i]).getAttribute("data-href") || f.getAttribute("href"); if ("stylesheet" === f.rel && (l === n || l === a)) return t() } var s = document.getElementsByTagName("style"); for (i = 0; i < s.length; i++) { var f; if ((l = (f = s[i]).getAttribute("data-href")) === n || l === a) return t() } var d = document.createElement("link"); d.rel = "stylesheet", d.type = "text/css", d.onload = t, d.onerror = function (t) { var n = t && t.target && t.target.src || a, u = new Error("Loading CSS chunk " + e + " failed.\n(" + n + ")"); u.code = "CSS_CHUNK_LOAD_FAILED", u.request = n, delete o[e], d.parentNode.removeChild(d), r(u) }, d.href = a, document.getElementsByTagName("head")[0].appendChild(d) })).then((function () { o[e] = 0 }))); var r = a[e]; if (0 !== r) if (r) t.push(r[2]); else { var n = new Promise((function (t, n) { r = a[e] = [t, n] })); t.push(r[2] = n); var u, i = document.createElement("script"); i.charset = "utf-8", i.timeout = 120, c.nc && i.setAttribute("nonce", c.nc), i.src = function (e) { return c.p + "static/js/" + ({}[e] || e) + "." + { 8: "637a5762", 9: "9a8d4d59", 10: "a6684685", 11: "f8310fa2", 12: "f4c5221d", 13: "4f7e47e2" }[e] + ".chunk.js" }(e); var l = new Error; u = function (t) { i.onerror = i.onload = null, clearTimeout(s); var r = a[e]; if (0 !== r) { if (r) { var n = t && ("load" === t.type ? "missing" : t.type), o = t && t.target && t.target.src; l.message = "Loading chunk " + e + " failed.\n(" + n + ": " + o + ")", l.name = "ChunkLoadError", l.type = n, l.request = o, r[1](l) } a[e] = void 0 } }; var s = setTimeout((function () { u({ type: "timeout", target: i }) }), 12e4); i.onerror = i.onload = u, document.head.appendChild(i) } return Promise.all(t) }, c.m = e, c.c = n, c.d = function (e, t, r) { c.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, c.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, c.t = function (e, t) { if (1 & t && (e = c(e)), 8 & t) return e; if (4 & t && "object" == typeof e && e && e.__esModule) return e; var r = Object.create(null); if (c.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: e }), 2 & t && "string" != typeof e) for (var n in e) c.d(r, n, function (t) { return e[t] }.bind(null, n)); return r }, c.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return c.d(t, "a", t), t }, c.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, c.p = "./", c.oe = function (e) { throw console.error(e), e }; var i = window["webpackJsonp_teamshare-docs"] = window["webpackJsonp_teamshare-docs"] || [], l = i.push.bind(i); i.push = t, i = i.slice(); for (var s = 0; s < i.length; s++)t(i[s]); var f = l; r() }([])</script>
+    <script src="./static/js/src~main.5906def1.chunk.js"></script>
+    <script src="./static/js/dingtalk~main.d1ad3f2e.chunk.js"></script>
+    <script src="./static/js/feb~main.22cc1bde.chunk.js"></script>
+    <script src="./static/js/moment~main.50836daa.chunk.js"></script>
+    <script src="./static/js/react~main.990138a6.chunk.js"></script>
+    <script src="./static/js/elliptic~main.f6ff6688.chunk.js"></script>
+    <script src="./static/js/main.0d867043.chunk.js"></script>
+</body>
+<script>
+    // sw.js 离线缓存的设置，注册service worker
+    function registerSW() {
+        if (navigator.serviceWorker != null) {
+            navigator.serviceWorker.register('./sw.js')
+                .then(function (registration) {
+                    console.log('Registered events at scope: ', registration.scope);
+                });
+        }
+
+        // 授权
+        Notification.requestPermission().then(function (result) {
+            if (result === 'granted') {
+                console.log("已经授权")
+            }
         });
+
+
+        window.deferredPrompt = null;
+
+        // 监听beforeinstallprompt事件，该事件在网站满足PWA安装条件时触发，保存安装事件
+        window.addEventListener("beforeinstallprompt", e => {
+            console.log("满足触发条件", e)
+            e.preventDefault();
+            window.deferredPrompt = e;
+        });
+
+        // 监听appinstalled事件，该事件在用户同意安装后触发，清空安装事件
+        window.addEventListener("appinstalled", () => {
+            window.deferredPrompt = null;
+        });
+        console.log("Service Worker 注册成功")
     }
 
-    // fetch('./data.json')
-
-    // var statusEl = document.querySelector('#network-status')
-    // if (!navigator.onLine) {
-    //   statusEl.classList = ['is-offline']
-    //   statusEl.innerText = 'Offline'
+    // // 手动触发PWA安装
+    // function addToDesktop() {
+    //   window.deferredPrompt.prompt();
     // }
 
-    //首先进行授权
-    Notification.requestPermission().then(function (result) {
-      if (result === 'granted') {
-        console.log("已经授权")
-      }
-    });
-
-    
-    window.deferredPrompt = null;
-
-    // 监听beforeinstallprompt事件，该事件在网站满足PWA安装条件时触发，保存安装事件
-    window.addEventListener("beforeinstallprompt", e => {
-        console.log("满足触发条件",e)
-        e.preventDefault();
-        window.deferredPrompt = e;
-    });
-
-    // 监听appinstalled事件，该事件在用户同意安装后触发，清空安装事件
-    window.addEventListener("appinstalled", () => {
-      window.deferredPrompt = null;
-    });
-
-    // 手动触发PWA安装
-    function addToDesktop() {
-      window.deferredPrompt.prompt();
+    function uninstall(){
+        // 卸载逻辑
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then(registration => {
+            registration.unregister();
+        });
+        console.log('Service Worker 已卸载');
     }
-  </script>
-  <div class="revision">测试</div>
-  <img src="/pwa_demo/pwa-fonts.png">
-  <div class="main-text">
-    Electrolux demo 示例
-  </div>
-  <div class="network-message">
-    Network:
-    <span id="network-status" class="">Good</span>
-    <button id="notifications" onclick="addToDesktop()">安装</button>
-  </div>
+    }
+</script>
 
-
-
-
-  
-
-  <script>
-
-    
-
-
-    
-  </script>
-</body>
+</html>
