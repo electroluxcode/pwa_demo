@@ -1,13 +1,13 @@
 {
-  "name": "Electrolux_pwa_demo",
+  "name": "Electrolux_docs",
   "short_name": "Electrolux_pwa",
   "display": "fullscreen",
-  "start_url": "/pwa_demo/index.html",  
+  "start_url": "/docs/index.html",  
   "theme_color": "blue",
   "background_color": "red",
   "icons": [
     {
-      "src": "/pwa_demo/favicon.svg",
+      "src": "/docs/favicon.svg",
       "sizes": "256x256",
       "type": "image/png"
     }

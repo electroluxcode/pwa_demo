@@ -79,7 +79,7 @@ serveice worker 生命周期
 使用PWA很简单，只需要在HTML中的head中使用link标签引用一个manifest.json文件即可.点击底部工具栏的JSON 选择 json with comments
 {
   // 应用的名称
-  "name": "Electrolux_pwa_demo",
+  "name": "Electrolux_docs",
   // 简称
   "short_name": "demo",
   // 显示模式 fullscreen（全屏） | standalone(独立) | standalone（最小化） | browser（浏览器）
@@ -126,9 +126,9 @@ console.log('Script loaded!')
 var cacheStorageKey = 'min'
 
 var cacheList = [
-  "/pwa_demo/main.css",
-  "/pwa_demo/e.png",
-  "/pwa_demo/pwa-fonts.png",
+  "/docs/main.css",
+  "/docs/e.png",
+  "/docs/pwa-fonts.png",
 ]
 //重点：可以在注册完成安装 Service Worker 时, 抓取静态资源写入缓存:
 self.addEventListener('install', function(e) {
@@ -228,14 +228,14 @@ self.addEventListener('fetch', function(e) {
   <title>Electrolux demo</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no" />
-  <link rel="manifest" href="/pwa_demo/manifest.json" />
-  <link rel="stylesheet" type="text/css" href="/pwa_demo/main.css">
-  <link rel="icon" href="/pwa_demo/e.png" type="image/png" />
+  <link rel="manifest" href="/docs/manifest.json" />
+  <link rel="stylesheet" type="text/css" href="/docs/main.css">
+  <link rel="icon" href="/docs/e.png" type="image/png" />
 </head>
 
 <body>
   <div class="revision">测试</div>
-  <img src="/pwa_demo/pwa-fonts.png">
+  <img src="/docs/pwa-fonts.png">
   <div class="main-text">
     Electrolux demo 示例
   </div>
@@ -251,7 +251,7 @@ self.addEventListener('fetch', function(e) {
   <script>
     //这里是进行sw.js 离线缓存的设置，注册service worker
     if (navigator.serviceWorker != null) {
-      navigator.serviceWorker.register('/pwa_demo/sw.js')
+      navigator.serviceWorker.register('/docs/sw.js')
         .then(function (registration) {
           console.log('Registered events at scope: ', registration.scope);
         });
