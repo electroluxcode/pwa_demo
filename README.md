@@ -1,5 +1,8 @@
 pwa 示例
 
+开发环境需要把 pwa_demo 换成  docs (manifest.json)
+
+
 ### PWA |  service worker
 
 ```js
